@@ -1,31 +1,39 @@
-/* 
-  We've already included normalize.css. 
-
-  But we'd like a modern looking boilerplate. 
-  Clean type, sans-serif, and a nice color palette. 
-  
-*/
-
+/* Neo-brutalist Grid Background */
 body {
-  font-family: sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #333;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 2px, transparent 2px),
+                    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 2px, transparent 2px);
+  background-size: 32px 32px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: sans-serif;
-  font-weight: 600;
-  line-height: 1.25;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+/* Mechanical Button Press */
+.neo-press:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px 0px #000 !important;
 }
 
-#app {
-  padding: 1rem;
+/* Entry Animations */
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  70% { transform: scale(1.05); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-slide-up {
+  animation: slideUpFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pop {
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+::-webkit-scrollbar { display: none; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

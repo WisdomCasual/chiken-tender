@@ -2,28 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-    />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>PartyKit: Everything's better with friends!</title>
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" sizes="any" />
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="PartyKit" />
-    <meta name="description" content="Everything's better with friends!" />
-    <meta name="author" content="PartyKit" />
-    <!-- Theme Colour -->
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1.0, user-scalable=0" />
+    <title>The Nuclear Option</title>
+    
+    <!-- Neo-brutalist Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;900&display=swap" rel="stylesheet">
 
+    <!-- Tailwind CDN with Neo-brutalism Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              neo: {
+                bg: '#FFFDF5',
+                ink: '#000000',
+                accent: '#FF6B6B',
+                secondary: '#FFD93D',
+                muted: '#C4B5FD'
+              }
+            },
+            fontFamily: { sans: ['"Space Grotesk"', 'sans-serif'] },
+            boxShadow: {
+              'neo-sm': '4px 4px 0px 0px #000',
+              'neo-md': '8px 8px 0px 0px #000',
+              'neo-lg': '12px 12px 0px 0px #000',
+              'neo-xl': '16px 16px 0px 0px #000',
+            }
+          }
+        }
+      }
+    </script>
+    
     <link rel="stylesheet" href="/normalize.css" />
     <link rel="stylesheet" href="/dist/client.css" />
   </head>
-  <body>
-    <div id="app">
-      <h1>🎈 Welcome to PartyKit!</h1>
-    </div>
+  <body class="bg-neo-bg text-neo-ink font-sans min-h-screen selection:bg-neo-accent selection:text-white">
+    <!-- Our app will be injected here -->
+    <div id="app" class="max-w-md mx-auto min-h-screen relative overflow-hidden"></div>
     <script type="module" src="/dist/client.js"></script>
   </body>
 </html>
