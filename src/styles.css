@@ -31,9 +31,95 @@ body {
   animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
+.neo-press-sm:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #000 !important;
+}
+
 ::-webkit-scrollbar { display: none; }
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes neoStripeShift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 22.627417px 0; } /* 16 × √2 = exact period */
+}
+
+.neo-loader-bar {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #000000 0px,
+    #000000 8px,
+    #FFD93D 8px,
+    #FFD93D 16px
+  );
+  background-size: 22.627417px 100%;
+  animation: neoStripeShift 0.6s linear infinite;
+}
+.neo-loader-bar {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #000000 0px,
+    #000000 10px,
+    #FFD93D 10px,
+    #FFD93D 20px
+  );
+  background-size: 28.284271px 100%; /* 20 × √2 */
+  animation: neoStripeShift 0.6s linear infinite;
+}
+
+@keyframes neoStripeShift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 28.284271px 0; }
+}
+
+@keyframes neoLoaderPulse {
+  0%, 100% { transform: rotate(-2deg) scale(1); }
+  50%      { transform: rotate(2deg) scale(1.02); }
+}
+
+.neo-loader-wrap {
+  animation: neoLoaderPulse 0.8s ease-in-out infinite;
+}
+
+/* === INVITE BUTTONS === */
+
+/* Hover: subtle 1px lift, no transition */
+.invite-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px 0px #000;
+}
+
+/* Active press — instant snap down */
+.invite-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #000 !important;
+}
+
+/* Arrow nudges slightly right on hover (no transition) */
+.invite-btn:hover .invite-arrow {
+  transform: translateX(3px);
+}
+
+/* Staggered drop-in for entrance only */
+.invite-btn {
+  opacity: 0;
+  animation: inviteDropIn 0.25s ease-out forwards;
+}
+.invite-btn:nth-of-type(1) { animation-delay: 0.04s; }
+.invite-btn:nth-of-type(2) { animation-delay: 0.10s; }
+.invite-btn:nth-of-type(3) { animation-delay: 0.16s; }
+
+@keyframes inviteDropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
