@@ -1,6 +1,6 @@
 {
   "$schema": "https://www.partykit.io/schema.json",
-  "name": "my-party",
+  "name": "chicken-tender",
   "main": "src/server.ts",
   "compatibilityDate": "2026-04-30",
   "serve": {
