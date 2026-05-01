@@ -123,3 +123,48 @@ body {
     transform: translateY(0);
   }
 }
+
+/* Side-of-screen glow during swipe */
+.swipe-glow {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 45vw;
+  max-width: 320px;
+  pointer-events: none;
+  z-index: 30;
+  opacity: 0;
+  transition: opacity 0.12s ease-out;
+  will-change: opacity;
+}
+.swipe-glow-left {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(239, 68, 68, 0.65) 0%,
+    rgba(239, 68, 68, 0.25) 40%,
+    rgba(239, 68, 68, 0) 100%
+  );
+}
+.swipe-glow-right {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(34, 197, 94, 0.65) 0%,
+    rgba(34, 197, 94, 0.25) 40%,
+    rgba(34, 197, 94, 0) 100%
+  );
+}
+
+/* Card entrance after a swipe (replaces wrapper fadeIn) */
+@keyframes swipeCardIn {
+  0%   { transform: scale(0.92) translateY(18px); opacity: 0; }
+  40%  { opacity: 0.4; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+.swipe-card-enter {
+  animation: swipeCardIn 0.32s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.05s both;
+}
+
+/* Allow native vertical scroll inside the description, JS handles the rest */
+.swipe-scrollable { touch-action: pan-y; }

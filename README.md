@@ -88,9 +88,8 @@ photos are pulled with a sneaky trick (Thanks to the random linkedin post) Googl
 
 ## Stuff it doesn't do (yet?)
 
-- swipe with your finger on the actual card (right now it's just buttons, sorry)
 - food filters
-- a "JOHN swiped NO on everything" award screen which would be SO funny
+- a "JOHN swiped NO on everything" award screen which would be funny
 
 ---
 
@@ -98,8 +97,6 @@ photos are pulled with a sneaky trick (Thanks to the random linkedin post) Googl
 
 - the free RapidAPI tier is like 100 requests a month, so don't go crazy
 - photos are kinda low-res (like 600px) because of the scraping trick
-- if you join after swiping started you start from card 1, which is a little weird
-- when the host leaves the room, the room is lost... forever
 
 ---
 *made for everyone who has ever typed "i'm fine with anything" and meant it as a threat*
